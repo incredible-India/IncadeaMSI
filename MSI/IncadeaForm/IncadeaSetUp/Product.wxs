@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi"><?define IncadeaForm_TargetDir=$(var.IncadeaForm.TargetDir)?>
+	<Product Id="3a89e113-7641-412c-b274-682e6b4338b9" Name="IncadeaSetUp MSI" Language="1033" Version="1.0.0.0" Manufacturer="Himanshu Kumar Sharma" UpgradeCode="a0daf9bd-4d2f-461b-929a-b36027d97cca">
+		<Package InstallerVersion="200" Compressed="yes" InstallScope="perMachine" />
+
+		<!--Adding Dialogue Box for the installation -->
+		<UIRef Id="WixUI_InstallDir"/>
+
+		<!--Bydefault ye installer folder me jayega-->
+		<Property Id="WIXUI_INSTALLDIR" Value="INSTALLFOLDER" />
+		
+		<!--uptohere-->
+		
+		<!--Adding Icon for the installer visible in controll panel-->
+
+		<Icon Id="home.ico" SourceFile="$(var.ProjectDir)home.ico" />
+		<Property Id="Himanshu" Value="home.ico" />
+		<!--uptohere-->
+		
+		<!--Now Setting the banner-->
+		<!--Top-->
+		<WixVariable Id="WixUIBannerBmp" Value="Images\bannertop.bmp" />
+		<!--Background-->
+		<WixVariable Id="WixUIDialogBmp" Value="Images\banner.bmp" />
+		<!--License-->
+		<WixVariable Id="WixUILicenseRtf" Value="$(var.ProjectDir)\license.rtf" />
+		<!--uptohere-->
+		
+		<MajorUpgrade DowngradeErrorMessage="A newer version of [ProductName] is already installed." />
+		
+		<!--Embedcap se cab file nhi dikhega in the setup location-->
+		<MediaTemplate EmbedCab="yes" />
+
+		<Feature Id="ProductFeature" Title="IncadeaSetUp" Level="1">
+			<ComponentGroupRef Id="ProductComponents" />
+		</Feature>
+	</Product>
+
+	<Fragment>
+		<Directory Id="TARGETDIR" Name="SourceDir">
+			<Directory Id="ProgramFilesFolder">
+				<!--Hello world ka upar use property urlref me karnege as a value ye programe file me Mysushma naam ka file bna ke uske andar setupfile install karega (optional hai)-->
+				<!--<Directory Id="HelloWorld" Name="MySushma">-->
+					<Directory Id="INSTALLFOLDER" Name="IncadeaSetUp" />
+				<!--</Directory>-->
+			</Directory>
+		</Directory>
+	</Fragment>
+
+	<Fragment>
+		<ComponentGroup Id="ProductComponents" Directory="INSTALLFOLDER">
+			<!-- TODO: Remove the comments around this Component element and the ComponentRef below in order to add resources to this installer. -->
+			<!-- <Component Id="ProductComponent"> -->
+				<!-- TODO: Insert files, registry keys, and other resources here. -->
+			<!-- </Component> -->
+			<Component Id="IncadeaForm.runtimeconfig.json" Guid="14286ae7-9747-407e-810e-d59ac3c89a41">
+			  <File Id="IncadeaForm.runtimeconfig.json" Name="IncadeaForm.runtimeconfig.json" Source="$(var.IncadeaForm_TargetDir)IncadeaForm.runtimeconfig.json" />
+			</Component>
+			<Component Id="IncadeaForm.dll" Guid="7d36d3e8-eedb-49b8-8244-1359af54d0cd">
+			  <File Id="IncadeaForm.dll" Name="IncadeaForm.dll" Source="$(var.IncadeaForm_TargetDir)IncadeaForm.dll" />
+			</Component>
+			<Component Id="IncadeaForm.exe" Guid="82665454-b82a-49f8-ae5d-eb2470ccb479">
+				<File Id="IncadeaForm.exe" Name="IncadeaForm.exe" Source="$(var.IncadeaForm_TargetDir)" />
+			</Component>
+		</ComponentGroup>
+	</Fragment>
+</Wix>
