@@ -7,14 +7,27 @@
   "targets": {
     ".NETCoreApp,Version=v6.0": {
       "IncadeaForm/1.0.0": {
+        "dependencies": {
+          "mydepency": "1.0.0"
+        },
         "runtime": {
           "IncadeaForm.dll": {}
+        }
+      },
+      "mydepency/1.0.0": {
+        "runtime": {
+          "mydepency.dll": {}
         }
       }
     }
   },
   "libraries": {
     "IncadeaForm/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "mydepency/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

@@ -20,3 +20,7 @@ C:\Users\himanshu.y.sharma\Desktop\incadea MSI\MSI\IncadeaForm\IncadeaForm\obj\D
 C:\Users\himanshu.y.sharma\Desktop\incadea MSI\MSI\IncadeaForm\IncadeaForm\obj\Debug\net6.0-windows\IncadeaForm.genruntimeconfig.cache
 C:\Users\himanshu.y.sharma\Desktop\incadea MSI\MSI\IncadeaForm\IncadeaForm\obj\Debug\net6.0-windows\ref\IncadeaForm.dll
 C:\Users\himanshu.y.sharma\Desktop\incadea MSI\MSI\IncadeaForm\IncadeaForm\obj\Debug\net6.0-windows\IncadeaForm_Content.g.cs
+C:\Users\himanshu.y.sharma\Desktop\incadea MSI\MSI\IncadeaForm\IncadeaForm\bin\Debug\net6.0-windows\Imp\TextFile1.txt
+C:\Users\himanshu.y.sharma\Desktop\incadea MSI\MSI\IncadeaForm\IncadeaForm\bin\Debug\net6.0-windows\mydepency.dll
+C:\Users\himanshu.y.sharma\Desktop\incadea MSI\MSI\IncadeaForm\IncadeaForm\bin\Debug\net6.0-windows\mydepency.pdb
+C:\Users\himanshu.y.sharma\Desktop\incadea MSI\MSI\IncadeaForm\IncadeaForm\obj\Debug\net6.0-windows\IncadeaForm.csproj.CopyComplete

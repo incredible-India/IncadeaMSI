@@ -4,7 +4,7 @@
 		<Package InstallerVersion="200" Compressed="yes" InstallScope="perMachine" />
 
 		<!--Adding Dialogue Box for the installation -->
-		<UIRef Id="WixUI_InstallDir"/>
+		<UIRef Id="WixUI_InstallDir" />
 
 		<!--Bydefault ye installer folder me jayega-->
 		<Property Id="WIXUI_INSTALLDIR" Value="INSTALLFOLDER" />
@@ -33,6 +33,7 @@
 
 		<Feature Id="ProductFeature" Title="IncadeaSetUp" Level="1">
 			<ComponentGroupRef Id="ProductComponents" />
+			<ComponentGroupRef Id="Imp_files" />
 		</Feature>
 	</Product>
 
@@ -41,7 +42,9 @@
 			<Directory Id="ProgramFilesFolder">
 				<!--Hello world ka upar use property urlref me karnege as a value ye programe file me Mysushma naam ka file bna ke uske andar setupfile install karega (optional hai)-->
 				<!--<Directory Id="HelloWorld" Name="MySushma">-->
-					<Directory Id="INSTALLFOLDER" Name="IncadeaSetUp" />
+					<Directory Id="INSTALLFOLDER" Name="IncadeaSetUp">
+					  <Directory Id="Imp" Name="Imp" />
+					</Directory>
 				<!--</Directory>-->
 			</Directory>
 		</Directory>
@@ -62,6 +65,21 @@
 			<Component Id="IncadeaForm.exe" Guid="82665454-b82a-49f8-ae5d-eb2470ccb479">
 				<File Id="IncadeaForm.exe" Name="IncadeaForm.exe" Source="$(var.IncadeaForm_TargetDir)" />
 			</Component>
+			<Component Id="home.ico" Guid="87568d0d-e4e7-4b78-ba2b-e6f445303dce">
+			  <File Id="home.ico" Name="home.ico" Source="$(var.IncadeaForm_TargetDir)home.ico" />
+			</Component>
+			<Component Id="mydepency.dll" Guid="85e308c4-56b7-47b1-89ba-8aa951dfc2be">
+			  <File Id="mydepency.dll" Name="mydepency.dll" Source="$(var.IncadeaForm_TargetDir)mydepency.dll" />
+			</Component>
+			
 		</ComponentGroup>
 	</Fragment>
+
+  <Fragment>
+    <ComponentGroup Id="Imp_files" Directory="Imp">
+      <Component Id="Imp_TextFile1.txt" Guid="25cd15d9-7ed1-497a-b33b-f18082b1a936">
+        <File Id="Imp_TextFile1.txt" Name="TextFile1.txt" Source="$(var.IncadeaForm_TargetDir)Imp\TextFile1.txt" />
+      </Component>
+    </ComponentGroup>
+  </Fragment>
 </Wix>

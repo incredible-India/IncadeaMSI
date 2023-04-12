@@ -1,11 +1,30 @@
 {
   "version": 3,
   "targets": {
-    "net6.0-windows7.0": {}
+    "net6.0-windows7.0": {
+      "mydepency/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "compile": {
+          "bin/placeholder/mydepency.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/mydepency.dll": {}
+        }
+      }
+    }
   },
-  "libraries": {},
+  "libraries": {
+    "mydepency/1.0.0": {
+      "type": "project",
+      "path": "../mydepency/mydepency.csproj",
+      "msbuildProject": "../mydepency/mydepency.csproj"
+    }
+  },
   "projectFileDependencyGroups": {
-    "net6.0-windows7.0": []
+    "net6.0-windows7.0": [
+      "mydepency >= 1.0.0"
+    ]
   },
   "packageFolders": {
     "C:\\Users\\himanshu.y.sharma\\.nuget\\packages\\": {},
@@ -41,7 +60,11 @@
       "frameworks": {
         "net6.0-windows7.0": {
           "targetAlias": "net6.0-windows",
-          "projectReferences": {}
+          "projectReferences": {
+            "C:\\Users\\himanshu.y.sharma\\Desktop\\incadea MSI\\MSI\\IncadeaForm\\mydepency\\mydepency.csproj": {
+              "projectPath": "C:\\Users\\himanshu.y.sharma\\Desktop\\incadea MSI\\MSI\\IncadeaForm\\mydepency\\mydepency.csproj"
+            }
+          }
         }
       },
       "warningProperties": {

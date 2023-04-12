@@ -9,5 +9,6 @@
 //------------------------------------------------------------------------------
 
 [assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("home.ico")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("imp/textfile1.txt")]
 
 

@@ -9,7 +9,18 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Imp\TextFile1.txt" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Content Include="home.ico" />
+    <Content Include="Imp\TextFile1.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\mydepency\mydepency.csproj" />
   </ItemGroup>
 
 </Project>
