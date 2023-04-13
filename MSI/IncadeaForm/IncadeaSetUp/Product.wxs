@@ -6,7 +6,7 @@
 		<!--Adding Dialogue Box for the installation -->
 		<UIRef Id="WixUI_InstallDir" />
 
-		<!--Bydefault ye installer folder me jayega-->
+		<!--Bydefault it will go in installer folder-->
 		<Property Id="WIXUI_INSTALLDIR" Value="INSTALLFOLDER" />
 		
 		<!--uptohere-->
